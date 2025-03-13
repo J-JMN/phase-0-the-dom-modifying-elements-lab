@@ -8,16 +8,26 @@ for (let i = 0; i < 3; i++) {
     li.textContent = (i + 1).toString();
     ul.append(li);
 }
+element.append(ul);
 
-const mainElement = document.querySelector('main#main');
+// Remove the <main> element with id "main"
+const mainElement = document.querySelector("main#main");
 if (mainElement) {
-  mainElement.remove();
+    mainElement.remove();
 }
 
-const newHeader = document.createElement('h1');
+// Create a new <h1> element
+const newHeader = document.createElement("h1");
 
-newHeader.id = 'victory';
+// Assign id="victory" to the <h1>
+newHeader.id = "victory";
 
-newHeader.innerHTML = 'Joseph Mburu is the champion';
+// Set text content (Replace "YOUR-NAME" with "Joseph Mburu")
+newHeader.textContent = "Joseph Mburu is the champion";
 
+// Append the new <h1> to the body
 document.body.appendChild(newHeader);
+
+// Ensure `newHeader` is globally accessible for the test suite
+window.newHeader = newHeader;
+
